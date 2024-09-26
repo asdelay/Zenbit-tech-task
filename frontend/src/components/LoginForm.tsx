@@ -17,10 +17,9 @@ export const LoginForm: FC= () => {
         try{
             const result = (await (axios.post(`http://127.0.0.1:7001/auth/login`,{email, password}))).data
             result.token && dispatch(logIn())
-        } catch (e) {
-            alert(`Error! ${e?.response?.data}`)
-        } finally {
             navigate('/')
+        } catch (e) {
+            alert(`Error! ${typeof e.response.data === 'string' ? e.response.data : ''}`)
         }
 
     }

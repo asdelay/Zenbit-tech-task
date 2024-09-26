@@ -16,10 +16,9 @@ export const RegisterForm: FC= () => {
             const result = (await (axios.post(`http://127.0.0.1:7001/auth/registration`,{email: loginEmail, password: loginPassword}))).data
             console.log(result)
             result.token && dispatch(logIn())
-        } catch (e) {
-            alert(`Error! ${e?.response?.data}`)
-        } finally {
             navigate('/')
+        } catch (e) {
+            alert(`Error! ${typeof e.response.data === 'string' ? e.response.data : ''}`)
         }
 
     }
