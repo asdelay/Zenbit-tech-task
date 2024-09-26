@@ -19,9 +19,8 @@ export const OpenDeals = () => {
 
     useEffect( () => {
         const getData = async () => {
-            const data = await axios.get('http://localhost:7001/deals')
+            const data = await axios.get('http://127.0.0.1:7001/deals')
             const dealsArray: Deal[] = data.data
-            console.log(dealsArray)
             setDeals(dealsArray)
         }
         getData()
