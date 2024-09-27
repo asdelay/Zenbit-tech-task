@@ -26,13 +26,20 @@ exports.AppModule = AppModule = __decorate([
             }),
             sequelize_1.SequelizeModule.forRoot({
                 dialect: 'postgres',
-                host: process.env.POSTGRES_HOST,
-                port: Number(process.env.POSTGRESS_PORT),
-                username: process.env.POSTGRES_USER,
-                password: process.env.POSTGRESS_PASSWORD,
-                database: process.env.POSTGRES_DB,
+                host: 'c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com',
+                port: 5432,
+                username: 'ud3jgalol1nm1g',
+                password: 'p6e3aef7e0b4ca176c908b66421930b96d6e9b00d3221651d8edfb13457b2af11',
+                uri: 'postgres://ud3jgalol1nm1g:p6e3aef7e0b4ca176c908b66421930b96d6e9b00d3221651d8edfb13457b2af11@c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/dflr3ocd7b9j5e',
+                database: 'dflr3ocd7b9j5e',
                 models: [users_model_1.User, deals_model_1.Deal],
                 autoLoadModels: true,
+                dialectOptions: {
+                    ssl: {
+                        require: true,
+                        rejectUnauthorized: false
+                    }
+                },
             }),
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
