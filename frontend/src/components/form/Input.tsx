@@ -1,25 +1,14 @@
-import React, {FC, useEffect, useId, useState} from 'react'
-import { useAppDispatch } from '../redux/hooks.ts'
-import { updateEmail, updatePassword } from '../redux/features/users/userSlice.ts';
+import React, {FC} from 'react'
+import { useInput } from '../../hooks/useInput.ts';
 
 interface Props {
     inputType: 'email' | 'password';
     labelText: string;
 }
 
-export const LoginInput: FC<Props> = ({inputType, labelText}) => {
-    const dispatch = useAppDispatch()
-    const id = useId()
-    const [inputValue, setInputValue] = useState('')
+export const Input: FC<Props> = ({inputType, labelText}) => {
+    const {id, inputValue, onInputChange} = useInput (inputType)
 
-    const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {        
-        setInputValue(e.target.value)
-        
-    }
-
-    useEffect(()=>{
-        dispatch(inputType === 'email' ? updateEmail(inputValue): updatePassword(inputValue))
-    }, [dispatch, inputType, inputValue])
 return (
     <div className="flex gap-[2px] flex-col mt-[20px]">
         <label htmlFor = {id} className='font-bold font-serif leading-[20px] text-[18px] md:text-[14px]'>{labelText}</label>

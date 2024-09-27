@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import background from '../images/land-bg.png'
+import React, {FC, lazy} from 'react'
+import background from '../../assets/images/land-bg.png'
 
 export const TitlePage: FC = () => {
     const scrollToDeals = () => {
@@ -9,7 +9,7 @@ export const TitlePage: FC = () => {
 return (
     <div className='bg-dark-blue'>
         <div className=' h-[700px] sm:h-[900px] lg:h-[1024px] flex justify-center items-center'>
-            <img src={background} alt="background" className='absolute w-full h-[700px] sm:h-[900px] lg:h-[1024px] bg-no-repeat bg-cover bg-center opacity-[60%]'/>
+            <img src={background} loading='lazy' alt="background" className='absolute w-full h-[700px] sm:h-[900px] lg:h-[1024px] bg-no-repeat object-cover bg-center opacity-[60%]'/>
             <div className='z-10 w-[1085px] flex flex-col gap-y-[60px] sm:gap-[30px] justify-center items-center text-center'>
                 <div className='flex flex-col items-center gap-2'>
                     <h1 className=' px-1 text-[40px] sm:text-[48px] lg:text-[64px] leading-60px] sm:leading-[80px] font-bold'>The chemical negatively charged</h1>

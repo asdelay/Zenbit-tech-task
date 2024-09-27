@@ -1,11 +1,11 @@
 import React from "react";
-import { HeaderButton } from "./components/HeaderButton.tsx";
-import { TitlePage } from "./components/TitlePage.tsx";
-import { OpenDeals } from "./components/OpenDeals.tsx";
-import { Header } from "./components/Header.tsx";
+import { HeaderButton } from "../../components/ui/HeaderButton.tsx";
+import { TitlePage } from "./TitlePage.tsx";
+import { OpenDeals } from "./OpenDeals.tsx";
+import { Header } from "../../components/ui/Header.tsx";
 import { Link } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "./redux/hooks.ts";
-import { signOut } from "./redux/features/users/userSlice.ts";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks.ts";
+import { signOut } from "../../redux/features/users/userSlice.ts";
 function App() {
   const dispatch = useAppDispatch()
   const isUserLogged = useAppSelector(state => state.users.isUserLoggedIn)

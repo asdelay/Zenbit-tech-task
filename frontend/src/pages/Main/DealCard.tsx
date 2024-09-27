@@ -12,7 +12,7 @@ interface Props {
     sold: string;
 }
 
-export const DealCard: FC<Props> = ({id, title, imageUrl, price, tiket, yieldPercent, daysLeft, sold}) => {
+export const DealCard: FC<Props> = ({title, imageUrl, price, tiket, yieldPercent, daysLeft, sold}) => {
 return (
     <div className='shrink-0 w-[100%] sm:w-[48.4%] lg:w-[48.8%] 2xl:w-[630px] h-[260px] lg:h-[320px] 2xl:h-[400px] bg-no-repeat bg-cover bg-center rounded-[5px] flex items-end p-[8px] lg:p-[14px]' style={{backgroundImage: `url(${imageUrl})`}}>
         <div>

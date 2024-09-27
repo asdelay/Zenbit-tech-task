@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from './App.tsx';
-import { ErrorPage } from './components/ErrorPage.tsx';
-import { Login } from './components/Login.tsx'; 
-import './styles/globals.css'
+import App from './pages/Main/App.tsx';
+import { ErrorPage } from './pages/Error/ErrorPage.tsx';
+import { Login } from './pages/Login/Login.tsx'; 
+import './assets/styles/globals.css'
 import { Provider } from 'react-redux';
 import { store } from './redux/store.ts';
-import { Register } from './components/Register.tsx';
+import { Register } from './pages/Registration/Register.tsx';
 
 const router = createBrowserRouter([
   {
